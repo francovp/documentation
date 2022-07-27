@@ -23441,11 +23441,16 @@
         "default": "deflate",
         "description": "HTTP header used to compress the media-type.",
         "enum": [
-          "deflate"
+          "deflate",
+          "zstd1",
+          "gzip"
         ],
+        "example": "deflate",
         "type": "string",
         "x-enum-varnames": [
-          "DEFLATE"
+          "DEFLATE",
+          "ZSTD1",
+          "GZIP"
         ]
       },
       "MetricCustomAggregation": {
@@ -82306,11 +82311,16 @@
               "default": "deflate",
               "description": "HTTP header used to compress the media-type.",
               "enum": [
-                "deflate"
+                "deflate",
+                "zstd1",
+                "gzip"
               ],
+              "example": "deflate",
               "type": "string",
               "x-enum-varnames": [
-                "DEFLATE"
+                "DEFLATE",
+                "ZSTD1",
+                "GZIP"
               ]
             }
           }
