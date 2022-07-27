@@ -121,6 +121,30 @@
     "request_description": "New dashboards of the dashboard list.",
     "request_schema_description": "Request containing the list of dashboards to update to."
   },
+  "GetDashboardReportConfigsList": {
+    "description": "Fetch a list of the Dashboard Reports currently configured on a given Dashboard. This list will include report configurations that are both enabled and disabled, but will not include reports that have been deleted for the given dashboard.",
+    "summary": "Get Dashboard Reports for a Dashboard"
+  },
+  "CreateDashboardReportConfig": {
+    "description": "Create a new Dashboard Report configuration for a given Dashboard. This will create a new report e-mail schedule to be sent to a the given list of recipients with a frequency, timeframe, etc. defined here. If you would like to pause sending e-mails regularly on the given schedule, you can deactivate the schedule.",
+    "summary": "Create a new Dashboard Report",
+    "request_description": "",
+    "request_schema_description": "Request body when creating a new Dashboard Report"
+  },
+  "DeleteDashboardReportConfig": {
+    "description": "Delete a Dashboard Report configuration, which will also disable the sending of scheduled e-mails for this report in the future. This operation cannot be undone, so if you would like to only pause the sending of e-mails for this report without deleting it, you can simply deactivate the report with a `PATCH` request rather than deleting it.",
+    "summary": "Delete a Dashboard Report"
+  },
+  "GetDashboardReportConfig": {
+    "description": "Fetch a single Dashboard Report configuration. This will include the same information provided when fetching a Dashboard's list of currently configured reports, but for a single report rather than all reports on a given dashboard.",
+    "summary": "Get a Dashboard Report"
+  },
+  "UpdateDashboardReportConfig": {
+    "description": "Update a Dashboard Report configuration, including things like when and how often to send e-mails, or whether to send any e-mails at all. Changes to the schedule should happen immediately, but may take up to five minutes for your report to be sent if the requested scheduled time is close to the time of the update request. If you would like to preview what your report will look like, you can use the Datadog app to configure a report in a Dashboard using the \"Preview\" button.",
+    "summary": "Update Dashboard Report",
+    "request_description": "",
+    "request_schema_description": "Request body when updating a Dashboard Report"
+  },
   "ListEvents": {
     "description": "List endpoint returns events that match an events search query.\n[Results are paginated similarly to logs](https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination).\n\nUse this endpoint to see your latest events.",
     "summary": "Get a list of events"
